@@ -7,7 +7,7 @@ export function App()
 {    
     const {fact, refreshFact} = useCatFact()
     const imageUrl = useCatImage({ fact })
-                
+                    
     const handleClick = async () => {
         refreshFact()
     }
