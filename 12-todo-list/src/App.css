@@ -1,0 +1,49 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Container */
+  .app-container {    
+    background: white;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes up the full height of the viewport */
+    background-color: #f4f4f4; /* Set the background color */
+    margin: 0;    
+    max-width: 1000px;
+  }
+  
+  /* Button */
+  .button {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background: #0056b3;
+  }
+  
+  /* Input Field */
+  .input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+    }
+  }

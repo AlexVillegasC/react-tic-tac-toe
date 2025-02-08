@@ -1,0 +1,111 @@
+
+.dashboard-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 10px;    
+    background-color: #1a1a1a;
+    border-radius: 10px;  
+    margin-left: 0px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.936);
+    text-align: center;
+    
+    h1 {        
+        font-size: 1.8rem;
+        color: #f1f1f1;
+        margin-bottom: 20px;
+    }
+
+    .empty-state {
+        font-size: 1.1rem;
+        color: #666;
+        margin-top: 20px;
+    }
+
+    .todo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.todo-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+    border-left: 5px solid #007bff;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .todo-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .todo-checkbox {
+        display: none; // Hide default checkbox
+    }
+
+    .checkbox-label {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #007bff;
+        border-radius: 4px;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        transition: background 0.3s ease, border-color 0.3s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: 5px;
+            width: 8px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+    }
+
+    .todo-checkbox:checked + .checkbox-label {
+        background: #007bff;
+        border-color: #0056b3;
+    }
+
+    .todo-checkbox:checked + .checkbox-label::after {
+        opacity: 1;
+    }
+
+    .text-content {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #0e0707;
+    }
+
+    &.completed {
+        opacity: 0.6;
+        text-decoration: line-through;
+    }
+}
