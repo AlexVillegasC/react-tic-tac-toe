@@ -1,47 +1,52 @@
 import React, { useState } from "react";
 import { Todo, Props } from "../types";
 import "./CommentsArea.css";
+import { useTodos } from "../Hooks/useTodos";
 
-export const CommentsArea: React.FC<Props> = ({ addTodo }) => {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+export const CommentsArea: React.FC<Props> = ({ addTodo }) => {        
+    const  { todos, mutate, isLoadingMutation } = useTodos()   
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!title.trim() || !description.trim()) return; // Prevent empty submissions
-        
+    const handleSubmit = (event: React.FormEvent) => {
+
+        if(isLoadingMutation) return; // Prevent multiple submissions
+
+        event.preventDefault();
+                        
+        const data = new FormData(event.currentTarget) 
+        const title = data.get('title').toString() ?? ''; 
+        const description = data.get('description').toString() ?? '';      
         const newTodo: Todo = {
-            id: Date.now(), // Unique ID
+            id: crypto.randomUUID(),
             title,
             description,
-            status: false, // Default status as incomplete
-        };
+            status: false,
+        }      
 
-        addTodo(newTodo); // Send new todo to parent
-        setTitle(""); // Clear inputs
-        setDescription("");
+        mutate({newTodo}); // Send new todo to parent        
     };
 
+
+
     return (
-        <div className="comments-area">
+                   
+         
+        <div className={`${isLoadingMutation ? 'opacity-40' : '' } comments-area`}>
             <h1>📝 Comments Area</h1>
             <form onSubmit={handleSubmit} className="todo-form">
                 <label>Title</label>
                 <input 
-                    type="text" 
-                    value={title} 
-                    onChange={(e) => setTitle(e.target.value)}
+                    name="title"
+                    type="text"                                         
                     placeholder="Enter title..."
                     required
                 />
                 <label>Description</label>
                 <textarea 
-                    value={description} 
-                    onChange={(e) => setDescription(e.target.value)}
+                    name="description"                                        
                     placeholder="Enter description..."
                     required
                 />
-                <button type="submit">Save Todo</button>
+                <button type="submit"disabled={isLoadingMutation}>Save Todo</button>
             </form>
         </div>
     );

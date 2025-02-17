@@ -3,13 +3,13 @@ export interface Welcome {
 }
 
 
-interface Todo {
-    id: number;
+export interface Todo {
+    id: string;
     title: string;
     description: string;
     status: boolean;
 }
 
-interface Props {
+export interface Props {
     addTodo: (newTodo: Todo) => void;
 }
