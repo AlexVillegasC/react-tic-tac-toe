@@ -19,4 +19,12 @@ describe('Router', () => {
         render(<Router routes={[]} defaultComponent={Page404}/>)
         expect(screen.getByText('404')).toBeTruthy()
     })
+
+    it('should render the component of the first route that matches', () => {
+        const HomePage = () => <h1>Home</h1>
+        const AboutPage = () => <h1>About</h1>
+
+        render(<Router routes={['/', '/about']} defaultComponent={Page404}/>)
+        
+    })
 })
