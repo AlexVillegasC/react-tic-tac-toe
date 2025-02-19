@@ -1,0 +1,72 @@
+[
+    {
+      "id": 49,
+      "question": "¿Cuál es la salida de este código?",
+      "code": "const arr = [1, 2, 3];\nconst [x, y] = arr;\nconsole.log(y);",
+      "answers": ["1", "2", "3", "undefined"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 50,
+      "question": "¿Qué imprime este código en la consola?",
+      "code": "console.log(typeof null);",
+      "answers": ["null", "object", "undefined", "number"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 51,
+      "question": "¿Cuál es el resultado de esta expresión?",
+      "code": "console.log(0 == '0');",
+      "answers": ["true", "false", "TypeError", "undefined"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 52,
+      "question": "¿Cuál es la salida del siguiente código?",
+      "code": "let a = [1, 2, 3];\nlet b = a;\nb.push(4);\nconsole.log(a);",
+      "answers": ["[1, 2, 3]", "[1, 2, 3, 4]", "[1, 2, 3, 4, 4]", "Error"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 53,
+      "question": "¿Qué retorna este código?",
+      "code": "console.log([] == false);",
+      "answers": ["true", "false", "TypeError", "undefined"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 54,
+      "question": "¿Qué devuelve este código?",
+      "code": "console.log(typeof NaN);",
+      "answers": ["number", "NaN", "undefined", "object"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 55,
+      "question": "¿Cuál es la salida del siguiente código?",
+      "code": "let x = 10;\n(function() {\n  console.log(x);\n  let x = 20;\n})();",
+      "answers": ["10", "20", "undefined", "ReferenceError"],
+      "correctAnswer": 3
+    },
+    {
+      "id": 56,
+      "question": "¿Qué se imprimirá en la consola?",
+      "code": "let x = 5;\nlet y = x++;\nconsole.log(y);",
+      "answers": ["4", "5", "6", "undefined"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 57,
+      "question": "¿Cuál es el resultado de la siguiente operación?",
+      "code": "console.log(1 + '1' - 1);",
+      "answers": ["1", "10", "11", "NaN"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 58,
+      "question": "¿Cuál es la salida de este código?",
+      "code": "let a = {};\nlet b = a;\nconsole.log(a === b);",
+      "answers": ["true", "false", "TypeError", "undefined"],
+      "correctAnswer": 0
+    }
+]  
