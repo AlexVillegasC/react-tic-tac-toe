@@ -6,8 +6,7 @@ import { useQuestionsStore } from "./store/questions"
 
 
 import  { type Question as QuestionType } from './types'
-import { confetti } from 'canvas-confetti'
-import { ArrowBack, ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
 const getBackgroundColor = (info: QuestionType, index: number) => {
     const {correctAnswer, userSelectedAnsware} = info

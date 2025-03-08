@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Question } from '../types';
+import type { Question } from '../types';
 import confetti from 'canvas-confetti'
 import { persist } from 'zustand/middleware'
 import { getAllQuestions } from '../services/questions.ts'
@@ -32,8 +32,8 @@ export const useQuestionsStore = create<State>()(logger(persist((set, get) => {
         fetchQuestions: async (limit: number) => {
             
             const json = await getAllQuestions(limit)
-
-            const questions =  json.sort(() => Math.random() - 0.5).slice(0, limit)
+            console.log("json: ", json)
+            const questions =  json?.sort(() => Math.random() - 0.5)?.slice(0, limit)
             set({ questions })
         },
         selectAnsware: (questionId: number, answerIndex: number) => {

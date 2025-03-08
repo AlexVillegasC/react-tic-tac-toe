@@ -1,4 +1,4 @@
-import { describe, it, expected, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen, cleanup } from  '@testing-library/react'
 import Router from './Router.jsx'
 import Page404 from './pages/Page404.jsx'
@@ -21,9 +21,7 @@ describe('Router', () => {
     })
 
     it('should render the component of the first route that matches', () => {
-        const HomePage = () => <h1>Home</h1>
-        const AboutPage = () => <h1>About</h1>
-
+      
         render(<Router routes={['/', '/about']} defaultComponent={Page404}/>)
         
     })
